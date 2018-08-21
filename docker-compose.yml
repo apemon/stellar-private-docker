@@ -8,5 +8,3 @@ services:
       FRIENDBOT_ENDPOINT: http://localhost:8001
     ports:
       - 8080:80
-    networks:
-      - ndidplatform

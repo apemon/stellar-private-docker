@@ -8,4 +8,4 @@ sed -i "s@r.Networks.TESTNET@'$NETWORK_PASSPHRASE_TESTNET'@g" /opt/laboratory/di
 # Edit the accountCreator.js file to change the friendbot service used
 sed -i "s@https://friendbot.stellar.org@$FRIENDBOT_ENDPOINT@g" /opt/laboratory/dist/app*.js
 
-http-server /opt/laboratory/dist
+nginx
