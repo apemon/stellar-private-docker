@@ -1,0 +1,20 @@
+FROM node:8-alpine as build
+
+WORKDIR /tmp
+RUN apk update && apk add --no-cache --virtual .build-deps \
+        python \
+        g++ \
+        make \
+        git
+
+RUN git clone https://github.com/stellar/laboratory.git && \
+        cd laboratory && \
+        yarn global add gulp && \
+        yarn install && \
+        yarn build
+
+RUN apk del .build-deps
+
+FROM nginx:stable-alpine
+
+COPY --from=build  /tmp/laboratory/dist /usr/share/nginx/html

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  stellar-laboratory:
+    image: apemon/stellar-laboratory
+    environment:
+      HORIZON_ENDPOINT_TESTNET: http://localhost:8000
+      NETWORK_PASSPHRASE_TESTNET: Standalone Network ; February 2017
+      FRIENDBOT_ENDPOINT: http://localhost:8001
+    ports:
+      - 8080:80
+    networks:
+      - ndidplatform

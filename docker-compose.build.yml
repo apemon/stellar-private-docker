@@ -1,0 +1,10 @@
+version: "3.3"
+services: 
+  laboratory:
+    build:
+      context: .
+      dockerfile: Dockerfile-laboratory
+      labels:
+        build.commit: ${BUILD_COMMIT}
+        build.date: ${BUILD_DATE}
+    image: apemon/stellar-laboratory
