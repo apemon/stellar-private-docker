@@ -1,0 +1,8 @@
+version: '3'
+services:
+  stellar-laboratory:
+    image: nginx:1.15.4-alpine
+    volumes:
+      - /srv/laboratory:/usr/share/nginx/html
+    ports:
+      - 8080:80
